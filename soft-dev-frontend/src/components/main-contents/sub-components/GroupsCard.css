@@ -1,0 +1,33 @@
+.group-card {
+  background-color: #ffc212;
+  color: #171721;
+  height: 150px;
+  width: 300px;
+  border-radius: 50px;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.group-card:hover {
+  background-color: #171721;
+  color: #ffc212;
+  transition: 0.1s;
+}
+.group-card-top {
+  display: flex;
+  justify-content: space-between;
+}
+.group-card-bottom {
+  font-size: 1.6em;
+  font-weight: 800;
+}
+.group-card-count {
+  font-size: 1.6em;
+  font-weight: 400;
+}
+.group-card-i {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+}

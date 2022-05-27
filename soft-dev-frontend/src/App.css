@@ -1,0 +1,30 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #1f222b;
+  font-size: 16px;
+}
+
+.grid-container {
+  display: grid;
+  width: 1366px;
+  /* background-color: cyan; */
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 94px 1fr;
+  grid-template-areas:
+    "sidebar navbar       "
+    "sidebar main-content";
+}

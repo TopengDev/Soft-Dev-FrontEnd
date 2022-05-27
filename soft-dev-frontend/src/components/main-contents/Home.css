@@ -1,0 +1,10 @@
+.main-home-container {
+  grid-area: main-content;
+  color: white;
+}
+.home-top {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}

@@ -1,0 +1,79 @@
+.in-group-main-container {
+  grid-area: main-content;
+  color: white;
+  padding: 30px 40px;
+}
+.in-group-card {
+  background-color: #171721;
+  /* background-color: red; */
+  height: 850px;
+  border: 1px solid #ffc212;
+  border-radius: 30px;
+  padding: 30px 40px;
+}
+.in-group-seg-1 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffc212;
+}
+.in-group-seg-1 p {
+  font-size: 2.3em;
+  font-weight: 800;
+}
+.seg-i {
+  font-size: 2.8em;
+  /* background-color: cyan; */
+}
+.in-group-seg-2 {
+  /* background-color: yellow; */
+  display: grid;
+  grid-template-columns: "1fr 1fr";
+  grid-template-rows: "1fr";
+  grid-template-areas: "buttons displayer";
+  padding-top: 30px;
+  height: 710px;
+}
+.in-group-seg-2-buttons {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ffc212;
+  padding-right: 30px;
+  justify-content: space-around;
+  width: 300px;
+}
+
+.in-group-seg-2-button-container {
+  height: 70px;
+  background: none;
+  color: #ffc212;
+  border: 5px solid #ffc212;
+  border-radius: 50px;
+  font-size: 1.2em;
+  font-weight: 400;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.in-group-seg-2-button-container:hover {
+  background-color: #ffc212;
+  color: #171721;
+  transition: ease-in-out 0.1s;
+}
+.in-group-seg-2-button-active {
+  background-color: #ffc212;
+  color: #171721;
+}
+.in-group-seg-2-displayer {
+  border-left: 1px solid #ffc212;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* background-color: green; */
+  width: 600px;
+}
+.in-group-seg-2-displayer-box {
+  height: 710px;
+  padding: 15px 20px;
+  /* background-color: red; */
+  /* width: 100%; */
+}

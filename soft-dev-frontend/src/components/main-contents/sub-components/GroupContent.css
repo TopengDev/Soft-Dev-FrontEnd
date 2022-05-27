@@ -1,0 +1,86 @@
+.group-content-container {
+  width: 100%;
+  /* background-color: cyan; */
+  height: 700px;
+  overflow: scroll;
+}
+.group-content-line {
+  /* display: grid;
+  grid-template-columns: "1fr 1fr";
+  grid-template-rows: "1fr";
+  grid-template-areas: "group-content-title group-content-data";
+  background-color: tomato; */
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+}
+.group-content-line-add-member {
+  display: flex;
+  /* background-color: red; */
+  justify-content: space-between;
+  width: 100%;
+}
+.group-content-data-container input {
+  /* width: 60%; */
+  /* height: 40px; */
+  background: none;
+  color: white;
+  border: 1px solid #ffc212;
+  /* font-size: 1em; */
+  padding: 0 15px;
+  border-radius: 10px;
+  margin-left: 10px;
+  /* margin-top: 15px; */
+}
+.add-member-title {
+  /* height: 30px; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: cyan; */
+}
+.add-member-title button {
+  margin-right: 15px;
+  /* margin-bottom: 15px; */
+  /* height: 30px; */
+}
+.group-content-title-container {
+  grid-area: group-content-title;
+  width: 50%;
+  /* background-color: red; */
+}
+.group-content-data-container {
+  grid-area: group-content-data;
+  display: flex;
+  justify-content: flex-start;
+  /* background-color: red; */
+  width: 60%;
+}
+.group-content-member {
+  padding-top: 15px;
+  /* background-color: blue; */
+  border-bottom: 1px solid #ffc212;
+}
+
+.setting-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.setting-button button {
+  margin-right: 15px;
+}
+.public-button {
+  background: none;
+  border: 1px solid #ffc212;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-weight: 800;
+  color: #ffc212;
+  width: 60px;
+}
+.public-button:hover {
+  transition: ease-in-out 0.1s;
+  background-color: #ffc212;
+  color: #171721;
+}

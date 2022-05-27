@@ -1,0 +1,67 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: #171721;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 1px 1px 13px black;
+}
+.a {
+  text-decoration: none;
+  color: #ffc212;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.a-text {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+.sidebar-logo {
+  /* background-color: yellow; */
+  height: 94px;
+  font-size: 2.8rem;
+  font-weight: 500;
+  padding: 15px 35px;
+}
+.sidebar-links {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 15px 30px;
+  height: 600px;
+}
+.sidebar-links .a {
+  font-weight: 800;
+  padding: 10px 0;
+  padding-left: 20px;
+  border-radius: 60px 0 0 60px;
+}
+.sidebar-links .a:hover {
+  background-color: #ffc212;
+  color: #171721;
+  transition: ease-in-out 0.1s;
+  box-shadow: 10px 5px 10px black;
+}
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 15px 30px;
+  height: 600px;
+}
+.sidebar-footer .a {
+  font-weight: 800;
+  padding: 10px 0;
+  padding-left: 20px;
+  border-radius: 60px 0 0 60px;
+}
+.sidebar-footer .a:hover {
+  background-color: #ffc212;
+  color: #171721;
+  transition: ease-in-out 0.1s;
+}
+.active {
+  background-color: #ffc212;
+  color: #171721;
+  box-shadow: 10px 5px 10px black;
+}

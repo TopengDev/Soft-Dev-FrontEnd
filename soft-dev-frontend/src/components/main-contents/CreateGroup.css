@@ -1,0 +1,11 @@
+.create-group-main-container {
+  grid-area: main-content;
+}
+.create-group-main-container-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.4em;
+  grid-area: main-content;
+}

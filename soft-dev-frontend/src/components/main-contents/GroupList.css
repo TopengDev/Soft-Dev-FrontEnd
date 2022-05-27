@@ -1,0 +1,15 @@
+.main-group-list-container {
+  grid-area: main-content;
+  padding: 30px 40px;
+  color: white;
+  overflow: scroll;
+}
+.group-list-container-1 {
+  /* background-color: red; */
+  height: 850px;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}

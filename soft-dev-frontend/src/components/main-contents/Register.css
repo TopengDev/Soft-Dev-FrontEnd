@@ -1,0 +1,137 @@
+.main-container {
+  color: white;
+  grid-area: main-content;
+  background-color: #1f222b;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-card {
+  width: 700px;
+  height: 95%;
+  background-color: #171721;
+  border-radius: 80px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  box-shadow: 1px 1px 10px black;
+}
+.main-container-success {
+  color: #ffc212;
+  grid-area: main-content;
+  background-color: #1f222b;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-card-success {
+  width: 700px;
+  height: 95%;
+  background-color: #171721;
+  border-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 1px 1px 10px black;
+  font-size: 3em;
+}
+
+.form-title-container {
+  width: 100%;
+  height: 15%;
+  /* background-color: cyan; */
+  display: flex;
+  /* color: black; */
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+form {
+  padding-top: 10%;
+  width: 50%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* background-color: red; */
+}
+.form-input-container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  border-bottom: 2px solid #ffc212;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 10px 20px; */
+  /* background-color: cyan; */
+}
+.form-input-container input {
+  color: white;
+  height: 65%;
+  width: 80%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 0.8em;
+}
+.input-icon-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+}
+.form-platforms-container {
+  /* background-color: red; */
+  padding: 3% 0;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form button {
+  background: none;
+  color: white;
+  border: 2px solid white;
+  height: 10%;
+  font-size: 1.2em;
+  border-radius: 20px;
+}
+form button:hover {
+  background-color: white;
+  color: black;
+  transition: ease-in-out 0.2s;
+}
+.platform-icons-container {
+  padding: 3% 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  /* background-color: cyan; */
+}
+.platform-icons-container button {
+  background: none;
+  border: none;
+}
+.or-sign-in {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  /* background-color: cyan; */
+}
+.or-sign-in .a {
+  color: #ffc212;
+  text-decoration: none;
+  padding-left: 10px;
+}
+.or-sign-in .a:hover {
+  color: white;
+}
