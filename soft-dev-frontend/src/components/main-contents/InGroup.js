@@ -9,13 +9,13 @@ const InGroup = ({ changePath, logInState }) => {
   const [groupContent, setGroupContent] = useState(1);
   const [groupTitle, setGroupTitle] = useState("");
 
-  const asd = (a) => {
-    a();
-  };
+  // const asd = (a) => {
+  //   a();
+  // };
 
   const changeGroupTitle = (title) => {
     setGroupTitle(title);
-    console.log(title);
+    // console.log(title);
   };
 
   const handleClick = (e) => {

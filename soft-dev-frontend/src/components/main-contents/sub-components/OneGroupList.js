@@ -7,7 +7,6 @@ const OneGroupList = ({ title, members, tag, publicState, groupID }) => {
   const groupPath = `/groups/${groupID}`;
 
   const handleClick = () => {
-    console.log(groupID);
     navigate(groupPath);
   };
 

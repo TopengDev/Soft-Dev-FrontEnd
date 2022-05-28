@@ -39,8 +39,6 @@ const CreateGroup = ({ logInState, changePath }) => {
         console.log(err);
       }
     }
-
-    console.log(data);
   };
 
   useEffect(() => {

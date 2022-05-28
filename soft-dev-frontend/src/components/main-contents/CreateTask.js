@@ -8,7 +8,7 @@ const CreateTask = ({ logInState, changePath }) => {
   changePath("create-task");
   const navigate = useNavigate();
   const groupId = window.location.href
-    .split("http://localhost:3001/groups/")[1]
+    .split("http://localhost:3000/groups/")[1]
     .split("/")[0];
   // groupId = groupId.split("/");
   const [inputData, setInputData] = useState({

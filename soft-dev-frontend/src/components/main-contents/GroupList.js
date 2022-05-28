@@ -24,7 +24,6 @@ const GroupList = ({ logInState, changePath }) => {
           },
         });
         setGroups(response.data);
-        console.log(groups);
       } catch (err) {
         console.log(err);
       }

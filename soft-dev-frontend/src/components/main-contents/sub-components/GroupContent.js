@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
   const navigate = useNavigate();
   const groupId = window.location.href.split(
-    "http://localhost:3001/groups/"
+    "http://localhost:3000/groups/"
   )[1];
   let token = "";
   const [addMemberInput, setAddMemberInput] = useState({
@@ -23,7 +23,7 @@ const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
   const [groupData, setGroupData] = useState({
     title: "",
     description: "",
-    tasks: [],
+    tasks: ["init"],
     members: [],
     tag: "",
     settings: {},
@@ -94,7 +94,6 @@ const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
           Authorization: auth,
         },
       });
-      console.log(addMemberInput);
       setAddMemberInput({
         userID: "",
       });
@@ -113,7 +112,6 @@ const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
           Authorization: auth,
         },
       });
-      console.log(delMemberInput);
       setDelMemberInput({
         userID: "",
       });
@@ -168,7 +166,6 @@ const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
     try {
       token = localStorage.getItem("token");
       const auth = `Bearer ${token}`;
-      console.log(auth);
       const response = await axios.get(
         `/api/groups/${groupData._id.toString()}/founder`,
         {
@@ -195,7 +192,6 @@ const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
             Authorization: auth,
           },
         });
-        console.log(response.data);
         setGroupData(response.data);
       } catch (err) {
         console.log(err.response);
@@ -203,7 +199,6 @@ const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
     }
   };
   useEffect(() => {
-    console.log(groupData);
     getGroupFounder();
     getGroupOwner();
     changeGroupTitle(groupData.title);
@@ -212,7 +207,6 @@ const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
   }, [groupData]);
   useEffect(() => {
     getGroupData();
-    console.log(logInState);
   }, []);
   useEffect(() => {
     getGroupData();

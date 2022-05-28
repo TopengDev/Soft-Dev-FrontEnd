@@ -1,7 +1,6 @@
 import "./OneTaskCard.css";
 
 const OneTaskCard = ({ ...props }) => {
-  console.log(props);
   return (
     <>
       <div className="one-task-card-container">
