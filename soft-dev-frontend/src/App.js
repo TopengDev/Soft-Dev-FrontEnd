@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
@@ -8,13 +13,23 @@ import Home from "./components/main-contents/Home";
 import GroupList from "./components/main-contents/GroupList";
 import CreateGroup from "./components/main-contents/CreateGroup";
 import InGroup from "./components/main-contents/InGroup";
-import { useState } from "react";
+import CreateTask from "./components/main-contents/CreateTask";
+import MyTasks from "./components/main-contents/MyTasks";
+import Profile from "./components/main-contents/Profile";
+import { useState, useEffect } from "react";
 
 function App() {
   const [name, setName] = useState("");
   const [userID, setUserID] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [tokenExists, setTokenExists] = useState(false);
+
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (!isLoggedIn) {
+  //     navigate("/sign-up");
+  //   }
+  // }, []);
 
   const [currentPath, setCurrentPath] = useState("/");
 
@@ -81,6 +96,24 @@ function App() {
                 path="/groups/:id"
                 element={
                   <InGroup logInState={isLoggedIn} changePath={changePath} />
+                }
+              />
+              <Route
+                path="/groups/:id/create-task"
+                element={
+                  <CreateTask logInState={isLoggedIn} changePath={changePath} />
+                }
+              />
+              <Route
+                path="/my-tasks"
+                element={
+                  <MyTasks logInState={isLoggedIn} changePath={changePath} />
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <Profile logInState={isLoggedIn} changePath={changePath} />
                 }
               />
             </Routes>

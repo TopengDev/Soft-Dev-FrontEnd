@@ -2,7 +2,7 @@ import "./InGroup.css";
 import GroupContent from "./sub-components/GroupContent";
 import { useEffect, useState } from "react";
 
-const InGroup = ({ changePath }) => {
+const InGroup = ({ changePath, logInState }) => {
   changePath("group");
 
   const [activeButton, setActiveButton] = useState("in-group-seg-2-btn-1");
@@ -84,6 +84,7 @@ const InGroup = ({ changePath }) => {
                 <GroupContent
                   groupContent={groupContent}
                   changeGroupTitle={changeGroupTitle}
+                  logInState={logInState}
                 />
               </div>
             </div>

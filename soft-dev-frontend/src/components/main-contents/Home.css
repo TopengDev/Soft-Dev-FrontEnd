@@ -7,4 +7,35 @@
   display: flex;
   align-items: center;
   padding: 0 80px;
+  justify-content: space-between;
+}
+.home-bottom {
+  /* border: 1px solid yellow; */
+  /* background-color: cyan; */
+  margin: 30px 40px;
+  padding: 50px 60px;
+  height: 500px;
+  border-radius: 50px;
+  overflow: scroll;
+  background-color: #171721;
+  box-shadow: 1px 1px 10px black;
+}
+.home-titles-line {
+  border-bottom: 1px solid yellow;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.home-bottom-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "col1 col2 col3";
+}
+.home-bottom-col-1 {
+  grid-area: col1;
+}
+.home-bottom-col-2 {
+  grid-area: col2;
+}
+.home-bottom-col-3 {
+  grid-area: col3;
 }

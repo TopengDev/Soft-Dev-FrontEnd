@@ -1,6 +1,29 @@
 import "./NavBar.css";
+import { useState, useEffect } from "react";
+import axios from "../api/axios";
 
 const NavBar = ({ path, name }) => {
+  const [input, setInput] = useState("");
+
+  const handleJoin = async () => {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.post(
+        `/api/groups/${input}/join`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setInput("");
+    } catch (err) {
+      setInput("");
+      console.log(err.response);
+    }
+  };
+
   let profileName = "";
   let title = "";
   if (name) {
@@ -27,11 +50,18 @@ const NavBar = ({ path, name }) => {
           <div className="nav-search-bar">
             <div className="nav-search-bar-inner">
               <i className="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Join a Group..." />
+              <input
+                type="text"
+                placeholder="Join a Group..."
+                onChange={(e) => setInput(e.target.value)}
+              />
             </div>
           </div>
           <div className="nav-notif-icon">
-            <i className="fa-solid fa-bell"></i>
+            <i
+              className="fa-solid fa-file-signature join-button"
+              onClick={handleJoin}
+            ></i>
           </div>
         </div>
         <div className="nav-seg-3">

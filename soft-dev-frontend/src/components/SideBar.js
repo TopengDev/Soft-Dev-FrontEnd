@@ -38,17 +38,11 @@ const SideBar = ({ logInState, so }) => {
                 </div>
                 <div className="a-text">My Groups</div>
               </NavLink>
-              <NavLink to="/tasks" className="a" id="a-tasks">
+              <NavLink to="/my-tasks" className="a" id="a-tasks">
                 <div className="a-icon">
                   <i className="fa-solid fa-list-check"></i>
                 </div>
                 <div className="a-text">My Tasks</div>
-              </NavLink>
-              <NavLink to="/journeys" className="a" id="a-journeys">
-                <div className="a-icon">
-                  <i className="fa-solid fa-scroll"></i>
-                </div>
-                <div className="a-text">My Journeys</div>
               </NavLink>
               <NavLink to="/create-group" className="a" id="a-create-group">
                 <div className="a-icon">

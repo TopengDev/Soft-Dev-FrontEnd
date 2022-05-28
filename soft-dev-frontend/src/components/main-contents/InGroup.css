@@ -8,6 +8,7 @@
   /* background-color: red; */
   height: 850px;
   border: 1px solid #ffc212;
+  box-shadow: 1px 1px 10px black;
   border-radius: 30px;
   padding: 30px 40px;
 }
@@ -73,7 +74,7 @@
 }
 .in-group-seg-2-displayer-box {
   height: 710px;
-  padding: 15px 20px;
+  padding: 15px 20px 15px 20px;
   /* background-color: red; */
   /* width: 100%; */
 }

@@ -1,5 +1,5 @@
 .group-list {
-  border: 4px solid #ffc212;
+  /* border: 4px solid #ffc212; */
   background-color: #171721;
   border-radius: 50px;
   display: flex;
@@ -10,6 +10,7 @@
   padding: 20px 30px;
   margin-bottom: 40px;
   font-size: 1.4em;
+  box-shadow: 1px 1px 10px black;
 }
 .group-list:hover {
   background-color: #ffc212;

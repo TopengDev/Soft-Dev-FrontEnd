@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "../../../api/axios";
 import { useNavigate } from "react-router-dom";
 
-const GroupContent = ({ groupContent, changeGroupTitle }) => {
+const GroupContent = ({ groupContent, changeGroupTitle, logInState }) => {
   const navigate = useNavigate();
   const groupId = window.location.href.split(
     "http://localhost:3001/groups/"
@@ -19,6 +19,7 @@ const GroupContent = ({ groupContent, changeGroupTitle }) => {
   const [contentType, setContentType] = useState(groupContent);
   const [groupFounderName, setGroupFounderName] = useState("");
   const [groupOwner, setGroupOwner] = useState("");
+  const [groupTasks, setGroupTasks] = useState([]);
   const [groupData, setGroupData] = useState({
     title: "",
     description: "",
@@ -27,6 +28,46 @@ const GroupContent = ({ groupContent, changeGroupTitle }) => {
     tag: "",
     settings: {},
   });
+  const handleFinishTask = async (e) => {
+    const taskId = e.target.getAttribute("taskId");
+    token = localStorage.getItem("token");
+    const auth = `Bearer ${token}`;
+
+    const response = await axios.post(
+      `/api/groups/${groupId}/tasks/${taskId}/finish`,
+      {},
+      {
+        headers: {
+          Authorization: auth,
+        },
+      }
+    );
+
+    getGroupData();
+  };
+  const handleDeleteTask = async (e) => {
+    const taskId = e.target.getAttribute("taskId");
+    token = localStorage.getItem("token");
+    const auth = `Bearer ${token}`;
+
+    const response = await axios.delete(
+      `/api/groups/${groupId}/tasks/${taskId}`,
+      {
+        headers: {
+          Authorization: auth,
+        },
+      }
+    );
+
+    getGroupData();
+  };
+  const handleCreateTask = async () => {
+    navigate("create-task", {
+      state: {
+        groupId: groupId,
+      },
+    });
+  };
   const handleDelGroup = async () => {
     try {
       token = localStorage.getItem("token");
@@ -167,9 +208,11 @@ const GroupContent = ({ groupContent, changeGroupTitle }) => {
     getGroupOwner();
     changeGroupTitle(groupData.title);
     setPublicActive(groupData.settings.isOpenToPublic);
+    setGroupTasks(groupData.tasks);
   }, [groupData]);
   useEffect(() => {
     getGroupData();
+    console.log(logInState);
   }, []);
   useEffect(() => {
     getGroupData();
@@ -233,6 +276,72 @@ const GroupContent = ({ groupContent, changeGroupTitle }) => {
               </div>
             </div>
           </div>
+        </>
+      );
+    }
+    if (groupContent == 2) {
+      return (
+        <>
+          <div className="group-content-container">
+            <div className="group-task-top create-task-button-container">
+              <div className="group-task-button-container">
+                <button onClick={handleCreateTask}>Create New Task</button>
+              </div>
+            </div>
+            {groupTasks.map((task) => {
+              return (
+                <>
+                  <div className="group-task-line-container" key={task.taskID}>
+                    <div className="group-task-container">
+                      <div className="task-key">Task ID</div>
+                      <div className="task-value">: {task.taskID}</div>
+                    </div>
+                    <div className="group-task-container">
+                      <div className="task-key">Task Title</div>
+                      <div className="task-value">: {task.taskName}</div>
+                    </div>
+                    <div className="group-task-container">
+                      <div className="task-key">Task Description</div>
+                      <div className="task-value">: {task.taskDescription}</div>
+                    </div>
+                    <div className="group-task-container">
+                      <div className="task-key">Due Date</div>
+                      <div className="task-value">: {task.taskDueDate}</div>
+                    </div>
+                    <div className="group-task-container">
+                      <div className="task-key">Created By</div>
+                      <div className="task-value">: {task.createdByName}</div>
+                    </div>
+                    <div className="group-task-container">
+                      <div className="task-key">Assigned To</div>
+                      <div className="task-value">: {task.assignedToName}</div>
+                    </div>
+                    <div className="group-task-container">
+                      <div className="task-key">Status</div>
+                      <div className="task-value">: {task.taskStatus}</div>
+                    </div>
+                    <div className="group-task-container">
+                      <div className="task-key">Priority Level</div>
+                      <div className="task-value">: {task.priorityLevel}</div>
+                    </div>
+                    <div className="group-task-top">
+                      <div className="group-task-button-container-finish">
+                        <button onClick={handleFinishTask} taskId={task.taskID}>
+                          Finish
+                        </button>
+                      </div>
+                      <div className="group-task-button-container-delete">
+                        <button onClick={handleDeleteTask} taskId={task.taskID}>
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+          ;
         </>
       );
     }
@@ -343,7 +452,13 @@ const GroupContent = ({ groupContent, changeGroupTitle }) => {
 
   return (
     <>
-      <div className="group-content-main-container">{renderContent()}</div>
+      {logInState ? (
+        <div className="group-content-main-container">{renderContent()}</div>
+      ) : (
+        <div className="group-content-main-container">
+          Sorry you are not logged in
+        </div>
+      )}
     </>
   );
 };

@@ -1,0 +1,38 @@
+.my-tasks-main-container {
+  grid-area: main-content;
+  padding: 30px 40px;
+  height: 100%;
+}
+
+.my-tasks-navbar {
+  /* background-color: cyan; */
+  position: fixed;
+  width: 980px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.my-tasks-navbar button {
+  width: 200px;
+  background: none;
+  color: #ffc212;
+  border: 3px solid #ffc212;
+  font-size: 1em;
+  font-weight: 800;
+  border-radius: 50px;
+}
+.my-tasks-navbar button:hover {
+  background-color: #ffc212;
+  color: #171721;
+  transition: ease-in-out 0.1s;
+}
+.my-tasks-box {
+  margin-top: 90px;
+  /* background-color: red; */
+  height: 740px;
+  overflow: scroll;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

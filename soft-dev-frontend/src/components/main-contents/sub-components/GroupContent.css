@@ -8,8 +8,8 @@
   /* display: grid;
   grid-template-columns: "1fr 1fr";
   grid-template-rows: "1fr";
-  grid-template-areas: "group-content-title group-content-data";
-  background-color: tomato; */
+  grid-template-areas: "group-content-title group-content-data";*/
+  /* background-color: tomato; */
   display: flex;
   justify-content: flex-start;
   padding-bottom: 15px;
@@ -83,4 +83,93 @@
   transition: ease-in-out 0.1s;
   background-color: #ffc212;
   color: #171721;
+}
+.group-task-top {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  /* margin: 15px 0; */
+}
+.create-task-button-container {
+  /* position: fixed; */
+  /* background-color: red; */
+  /* width: 500px; */
+}
+.group-task-button-container {
+  /* height: 60px; */
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.group-task-button-container button {
+  height: 40px;
+  background: none;
+  color: white;
+  border: 3px solid #ffc212;
+  border-radius: 20px;
+  padding: 2px 50px;
+  font-weight: 800;
+  color: #ffc212;
+}
+.group-task-button-container button:hover {
+  transition: ease-in-out 0.1s;
+  background-color: #ffc212;
+  color: #171721;
+}
+.group-task-line-container {
+  /* background-color: cyan; */
+  border-bottom: 1px solid #ffc212;
+  padding: 15px 0;
+  /* padding: 5px 15px; */
+}
+.group-task-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: "task-key task-value";
+}
+.task-key {
+  grid-area: task-key;
+  /* background-color: red; */
+  padding-right: 15px;
+  /* width: 120px; */
+}
+.task-value {
+  display: flex;
+  justify-content: flex-start;
+  grid-area: task-value;
+  /* background-color: yellow; */
+  /* width: 100%; */
+}
+.group-task-button-container-finish button {
+  height: 40px;
+  background: none;
+  color: white;
+  border: 3px solid green;
+  border-radius: 20px;
+  padding: 2px 50px;
+  font-weight: 800;
+  color: #ffc212;
+}
+.group-task-button-container-finish button:hover {
+  transition: ease-in-out 0.1s;
+  background-color: green;
+  color: white;
+}
+.group-task-button-container-delete button {
+  height: 40px;
+  background: none;
+  color: white;
+  border: 3px solid red;
+  border-radius: 20px;
+  padding: 2px 50px;
+  font-weight: 800;
+  color: #ffc212;
+}
+.group-task-button-container-delete button:hover {
+  transition: ease-in-out 0.1s;
+  background-color: red;
+  color: white;
 }
